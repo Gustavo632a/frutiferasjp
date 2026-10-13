@@ -1,0 +1,5 @@
+import { Instagram, ArrowUpRight } from 'lucide-react';
+import { navigation, site } from '../config/site';
+import { createWhatsAppUrl } from '../lib/whatsapp';
+import s from '../styles/Site.module.css';
+export function Footer() { return <footer className={s.footer}><div className={s.footerTop}><div><a className={s.wordmark} href="#inicio">frutíferas<span>JOÃO PESSOA · SEMENTEIRA</span></a><p>Frutíferas João Pessoa — Cultivando possibilidades.</p></div><nav aria-label="Navegação do rodapé">{navigation.map(item => <a key={item.href} href={item.href}>{item.label}</a>)}</nav><div className={s.footerContact}><a href={createWhatsAppUrl()} target="_blank" rel="noopener noreferrer">{site.phoneLabel}<ArrowUpRight size={16}/></a><a href={site.instagram} target="_blank" rel="noopener noreferrer"><Instagram size={16}/> Instagram</a><p>Praia de Jacarapé · João Pessoa/PB<br/>{site.address}</p></div></div><div className={s.footerBottom}><span>© {new Date().getFullYear()} {site.name}. Todos os direitos reservados.</span><span>Feito para florescer.</span></div></footer>; }
